@@ -83,7 +83,7 @@ if __name__ == "__main__":
 Les programmes Go doivent :
 - Utiliser `//go:embed` pour inclure le fichier `input.txt` (tout autre nom de fichier ne fonctionnera pas !)
 - Afficher **uniquement** le résultat final sur la sortie standard (stdout)
-- Importer uniquement des fonctions d'autres packages. Si vous avez plusieurs fichiers auxiliares qui sont aussi dans la package main, les tests risquent de planter
+- Importer uniquement des fonctions d'autres packages. Si vous avez plusieurs fichiers auxiliares qui sont aussi dans la package main, les tests risquent de planter.
 
 les commande utilisée pour exectuter les tests sont `go run solution1.go` et/ou `go run solution2.go`
 
