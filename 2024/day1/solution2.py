@@ -1,18 +1,22 @@
-import csv
+import sys
 
-col1 = []
-col2 = []
+def solve(chemin):
+    col1 = []
+    col2 = []
 
 
-with open("/home/etudiants/poirson48u/AOC-salome.poirson/2024/day1/input.csv", "r", newline='', encoding="utf-8") as f:
-    reader = csv.reader(f)
-    for row in reader:
-        if len(row) >= 2:     # s'assurer qu'il y a au moins deux colonnes
-            col1.append(int(row[0]))
-            col2.append(int(row[1]))
+    with open(chemin, "r", encoding="utf-8") as f:
+        for ligne in f:
+            a, b = ligne.split()
+            col1.append(int(a))
+            col2.append(int(b))
 
-count=0
-for elem in col1:
-    count+=elem*col2.count(elem)
+    count=0
+    for elem in col1:
+        count+=elem*col2.count(elem)
 
-print(count)
+    return(count)
+
+if __name__ == "__main__":
+    result = solve(sys.argv[1])
+    print(result)
