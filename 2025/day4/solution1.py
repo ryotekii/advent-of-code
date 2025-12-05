@@ -22,7 +22,7 @@ def solve(chemin:str):
         for y_shift,x_shift in voisins :
             if tableau[y+y_shift][x+x_shift] == "@":
                 nb += 1
-        print(y,x,nb)
+        # print(y,x,nb)
         return (nb<4)
     
     res = 0
