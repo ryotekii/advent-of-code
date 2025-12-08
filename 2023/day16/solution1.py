@@ -43,7 +43,7 @@ def solve(chemin):
                 return [(coord_y,coord_x+1,(0,1))]
             else:
                 return [(coord_y,coord_x-1,(0,-1))]
-        print("erreur")
+        # print("erreur")
         
     def parcourir():
         chemin = [[0 for i in range (110)] for i in range(110)] 

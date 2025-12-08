@@ -6,7 +6,7 @@ def solve(chemin:str):
         for line in f:
             line = line.rstrip("\n")
             tableau.append(list(line))
-    print(tableau)
+    # print(tableau)
     
     def verifier_voisins(y:int,x:int)->bool:
         voisins = {(-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1)}

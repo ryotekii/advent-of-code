@@ -30,5 +30,5 @@ def solve(chemin):
     
     
 if __name__ == "__main__":
-    result = solve("2025/day5/input.txt")
+    result = solve(sys.argv[1])
     print(result)

@@ -1,3 +1,5 @@
+import sys
+
 def solve(chemin):
     def ouvrir_fichier(chemin:str):
         with open(chemin) as f:

@@ -13,7 +13,7 @@ def solve(chemin):
         return intervalles
 
     intervalles = lire_intervalles(chemin)
-    print(intervalles)
+    # print(intervalles)
 
     solution = 0
 
