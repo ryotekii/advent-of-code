@@ -9,7 +9,7 @@ def solve(chemin:str):
             tableau.append([int(x) for x in ligne.split()])
         ligne = lignes[-1]
         tableau.append([x for x in ligne.split()])
-    print(tableau)
+    # print(tableau)
     
     total = 0
     for i in range (len(tableau[0])):
