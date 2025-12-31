@@ -22,16 +22,6 @@ def solve(chemin):
     possibilites = sorted(combinations(circuits, 2),
                key=lambda x: dist(*x))
     
-    for point1, point2 in possibilites[:1000]:
-        if set(circuits[point1]) == set(circuits[point2]):
-            pass
-        else:
-            nv_circuit = list(set(circuits[point1] + circuits[point2]))
-            for b in nv_circuit:
-                circuits[b] = nv_circuit
-    
-    # print(list(circuits.values()))
-    
     def uniq(liste_circuits_doubles):
         for liste in liste_circuits_doubles:
             liste.sort()
@@ -41,14 +31,17 @@ def solve(chemin):
             if liste_circuits_doubles[i] not in liste_circuits_doubles[i+1:]:
                 liste_bis.append(liste_circuits_doubles[i])
         return liste_bis
-        
-
-    sans_doublons = uniq(list(circuits.values()))
     
-    resultat = sorted(sans_doublons,key=len,reverse=True)
-    
-    return(len(resultat[0])*len(resultat[1])*len(resultat[2]))
+    for point1, point2 in possibilites:
+        if set(circuits[point1]) == set(circuits[point2]):
+            pass
+        elif len(uniq(list(circuits.values()))) > 2:
+                nv_circuit = list(set(circuits[point1] + circuits[point2]))
+                for b in nv_circuit:
+                    circuits[b] = nv_circuit
+        elif len(uniq(list(circuits.values()))) == 2:
+            return (point1[0]*point2[0])
           
 if __name__ == "__main__":
-    result = solve(sys.argv[1])
+    result = solve("2025/day8/input.txt")
     print(result)
